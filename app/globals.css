@@ -176,7 +176,11 @@
   .skill-badge {
     @apply px-4 py-2 rounded-full bg-secondary text-secondary-foreground 
            border border-border/50 text-sm font-medium
-           transition-all duration-300 hover:border-primary/50 hover:shadow-glow;
+           transition-all duration-300 hover:border-primary/50;
+  }
+  
+  .skill-badge:hover {
+    box-shadow: var(--shadow-glow);
   }
 
   .nav-link {
