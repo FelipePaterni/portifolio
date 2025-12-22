@@ -2,8 +2,15 @@ import { ComponentProps } from "react";
 import { twMerge } from "tailwind-merge";
 
 export interface ButtonProps extends ComponentProps<"button"> {
-  variant?: "default" | "secondary" | "destructive" | "outline" | "ghost" | "link";
+  variant?:
+    | "default"
+    | "secondary"
+    | "destructive"
+    | "outline"
+    | "ghost"
+    | "link";
   size?: "default" | "sm" | "lg" | "icon";
+  href?: string;
 }
 
 const base =
@@ -12,8 +19,10 @@ const base =
 const variants = {
   default: "bg-primary text-primary-foreground hover:bg-primary/90",
   secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
-  destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
-  outline: "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
+  destructive:
+    "bg-destructive text-destructive-foreground hover:bg-destructive/90",
+  outline:
+    "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
   ghost: "hover:bg-accent hover:text-accent-foreground",
   link: "text-primary underline-offset-4 hover:underline",
 };
@@ -25,16 +34,26 @@ const sizes = {
   icon: "h-10 w-10",
 };
 
-export function Button({
+export default function Button({
   variant = "default",
   size = "default",
   className,
+  href,
   ...props
 }: ButtonProps) {
-  return (
-    <button
-      {...props}
-      className={twMerge(base, variants[variant], sizes[size], className)}
-    />
-  );
+  if (href) {
+    return (
+      <a
+        href={href}
+        className={twMerge(base, variants[variant], sizes[size], className)}
+      />
+    );
+  } else {
+    return (
+      <button
+        {...props}
+        className={twMerge(base, variants[variant], sizes[size], className)}
+      />
+    );
+  }
 }
