@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 import Card from ".";
-import { Mail } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 
 const meta = {
   title: "UI-COMPONENTS/Card",
@@ -13,29 +13,40 @@ const meta = {
     label: { control: "text" },
     value: { control: "text" },
     href: { control: "text" },
-    icon: { control: "object" },
-    transition: { control: "object" },
     type: {
       control: { type: "radio" },
       options: ["default", "reverse"],
-      table: {
-        defaultValue: { summary: "default",detail: "The default card style" },
-        type: { summary: "string" },
-      },
     },
   },
 } satisfies Meta<typeof Card>;
 
 export default meta;
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof Card>;
 
 export const Default: Story = {
   args: {
-    label: "Default Card",
-    value: "This is a default card value",
+    label: "Email",
+    value: "contact@example.com",
     icon: Mail,
-    transition: { duration: 0.5 },
-    href: "https://example.com",
+    type: "default",
+  },
+};
+
+export const Reverse: Story = {
+  args: {
+    label: "Phone",
+    value: "+1 (555) 123-4567",
+    icon: Phone,
+    type: "reverse",
+  },
+};
+
+export const WithLink: Story = {
+  args: {
+    label: "Location",
+    value: "San Francisco, CA",
+    href: "https://maps.google.com",
+    icon: MapPin,
     type: "default",
   },
 };

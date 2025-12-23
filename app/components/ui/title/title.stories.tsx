@@ -8,10 +8,13 @@ const meta = {
     layout: 'centered',
   },
   tags: ['autodocs'], 
-   argTypes: {
-    className: { control: 'text'},
-    spanClassName: { control: 'text'},
-    children: { control: 'text'}
+  argTypes: {
+    className: { control: 'text' },
+    spanClassName: { control: 'text' },
+    titleClassName: { control: 'text' },
+    subtitleClassName: { control: 'text' },
+    children: { control: 'text' },
+    subtitle: { control: 'text' },
   }, 
 } satisfies Meta<typeof Title>;
 
@@ -20,6 +23,15 @@ type Story = StoryObj<typeof Title>;
 
 export const Default: Story = {
   args: {
-    children: 'Primary Title',
+    children: 'Meus Projetos',
+    subtitle: 'Minha jornada profissional'
+  },
+};
+
+export const CustomSpan: Story = {
+  args: {
+    children: 'Experiência',
+    spanClassName: 'm-5 text-secondary',
+    subtitle: 'Minha jornada profissional'
   },
 };

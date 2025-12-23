@@ -1,9 +1,10 @@
-import { ComponentProps } from "react";
+import { ComponentProps, HTMLAttributeAnchorTarget } from "react";
 import { twMerge } from "tailwind-merge";
 
 export interface ButtonProps extends ComponentProps<"button"> {
   variant?: VariantKey;
   size?: SizeKey;
+  target?: HTMLAttributeAnchorTarget;
   href?: string;
 }
 
@@ -37,6 +38,7 @@ export default function Button({
   size = "default",
   className,
   href,
+  target,
   ...props
 }: ButtonProps) {
   if (href) {
@@ -44,7 +46,11 @@ export default function Button({
       <a
         href={href}
         className={twMerge(base, variants[variant], sizes[size], className)}
-      />
+        id={props.id}
+        target={target}
+      >
+        {props.children}
+      </a>
     );
   } else {
     return (
