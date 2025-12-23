@@ -1,18 +1,9 @@
 import "../app/globals.css"
-import type { Preview } from '@storybook/nextjs-vite'
-import { Outfit } from 'next/font/google'
-import React from 'react'
 
-const outfit = Outfit({ 
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
-  variable: '--font-outfit',
-})
+import type { Preview } from '@storybook/nextjs-vite'
 
 const preview: Preview = {
-  decorators: [
-    (Story) => React.createElement('div', { className: outfit.className }, React.createElement(Story, null)),
-  ],
+
   parameters: {
     controls: {
       matchers: {

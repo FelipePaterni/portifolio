@@ -15,6 +15,14 @@ const meta = {
     href: { control: "text" },
     icon: { control: "object" },
     transition: { control: "object" },
+    type: {
+      control: { type: "radio" },
+      options: ["default", "reverse"],
+      table: {
+        defaultValue: { summary: "default",detail: "The default card style" },
+        type: { summary: "string" },
+      },
+    },
   },
 } satisfies Meta<typeof Card>;
 
@@ -28,5 +36,6 @@ export const Default: Story = {
     icon: Mail,
     transition: { duration: 0.5 },
     href: "https://example.com",
+    type: "default",
   },
 };
