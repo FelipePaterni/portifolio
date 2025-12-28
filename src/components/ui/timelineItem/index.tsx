@@ -1,6 +1,6 @@
 "use client";
 
-import { TimelineData } from "@/app/types/timelinedata";
+import { TimelineData } from "@/app/src/types/timelinedata";
 import { motion } from "framer-motion";
 import { Calendar } from "lucide-react";
 interface TimelineItemProps {

@@ -3,9 +3,9 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Code2 } from "lucide-react";
-import Button from "@/app/components/ui/button";
+import Button from "@/components/ui/button";
 import ThemeToggle from "../themeToggle";
-import { NavItem } from "@/app/types/navitem";
+import { NavItem } from "@/types/navitem";
 import { NavLink } from "../../ui/navlink";
 
 export interface NavbarProps {
