@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Outfit } from 'next/font/google';
 import './globals.css';
+import { AppThemeProvider } from './providers/theme-provider';
 
 export const metadata: Metadata = {
   title: 'Dev Journey Showcase',
@@ -24,7 +25,9 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={outfit.className}>
-      {children}
+        <AppThemeProvider>
+          {children}
+        </AppThemeProvider>
       </body>
     </html>
   );
