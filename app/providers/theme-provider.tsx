@@ -9,7 +9,7 @@ interface Props {
 
 export function AppThemeProvider({ children }: Props) {
   return (
-    <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
+    <ThemeProvider attribute="class" defaultTheme="light" enableSystem={true}>
       {children}
     </ThemeProvider>
   );

@@ -24,7 +24,7 @@ const preview: Preview = {
         enableSystem={false}
         forcedTheme={context.globals.theme}
       >
-        <div className="bg-background text-foreground p-4">
+        <div className="bg-background text-foreground p-6">
           <Story />
         </div>
       </ThemeProvider>
