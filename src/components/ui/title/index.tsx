@@ -1,5 +1,6 @@
+"use client";
 import { motion } from "framer-motion";
-import { ComponentProps } from "react";
+import { ComponentProps, use } from "react";
 import { twMerge } from "tailwind-merge";
 
 export interface TitleProps extends ComponentProps<"h2"> {
@@ -20,10 +21,19 @@ export default function Title({
 }: TitleProps) {
   const divClass = twMerge("text-center mb-16", className);
   const childrenClass = twMerge("section-title", titleClassName);
-  const subtitleClass = twMerge("section-subtitle max-w-2xl mx-auto", subtitleClassName);
+  const subtitleClass = twMerge(
+    "section-subtitle max-w-2xl mx-auto",
+    subtitleClassName
+  );
   const spanClass = twMerge("text-primary ", spanClassName);
   return (
-    <motion.div className={divClass}>
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+      className={divClass}
+    >
       <h2 className={childrenClass} {...props}>
         <span className={spanClass}>&lt;</span>
         {children} <span className={spanClass}>/&gt;</span>

@@ -3,6 +3,9 @@ import HeroSection from "@/section/hero";
 import ProjectsSection from "@/section/project";
 import getProfileData from "@/lib/getProfileData";
 import SkillsSection from "@/section/skills";
+import ExperienceSection from "@/section/experience";
+import { Contact } from "lucide-react";
+import ContactSection from "@/section/contact";
 
 export default async function Page() {
   const data = await getProfileData();
@@ -20,8 +23,10 @@ export default async function Page() {
         skills={skills}
       />
       <AboutSection aboutMe={data.aboutMe} />
-      <SkillsSection languages={data.languages} skills={data.skills}/>
-      <ProjectsSection />
+      <SkillsSection languages={data.languages} skills={data.skills} />
+      <ProjectsSection projects={data.projects} />
+      <ExperienceSection />
+      <ContactSection />
     </main>
   );
 }

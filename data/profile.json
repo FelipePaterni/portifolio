@@ -32,7 +32,8 @@
       "description": "Site pessoal construído com Next.js",
       "tags": ["Next.js", "TypeScript", "Tailwind CSS"],
       "liveDemoLink": "https://example.com",
-      "githubLink": " "
+      "githubLink": " ",
+      "iconName": "web"
     }
   ],
   "timeline": [

@@ -1,28 +1,45 @@
+"use client";
 import { motion } from "framer-motion";
 import Button from "../button";
-import { ExternalLink, Github } from "lucide-react";
+import {
+  AppWindow,
+  ExternalLink,
+  Gamepad2,
+  Github,
+  Globe,
+  Server,
+} from "lucide-react";
+import React from "react";
 
 export interface ProjectProps {
   title: string;
   description: string;
   icon?: React.FC<React.SVGProps<SVGSVGElement>>;
+  iconName?: keyof typeof icons;
   githubLink?: string;
   liveDemoLink?: string;
   tags: string[];
   image?: string;
+  index?: number;
 }
 
-export default function ProjectCard(
-  {
-    title,
-    description,
-    icon: Icon,
-    githubLink,
-    liveDemoLink,
-    tags,
-  }: ProjectProps,
-  index: number
-) {
+const icons = {
+  web: AppWindow,
+  mobile: Globe,
+  game: Gamepad2,
+  backend: Server,
+} as const;
+
+export default function ProjectCard({
+  title,
+  description,
+  icon: Icon,
+  githubLink,
+  liveDemoLink,
+  tags,
+  iconName,
+  index = 0,
+}: ProjectProps) {
   return (
     <motion.div
       key={title}
@@ -35,11 +52,15 @@ export default function ProjectCard(
       }
     >
       <div className="flex items-start justify-between mb-4">
-        {Icon && (
+        {Icon ? (
           <div className="p-3 rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
             <Icon className="w-6 h-6" />
           </div>
-        )}
+        ) : iconName ? (
+          <div className="p-3 rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
+            {React.createElement(icons[iconName], { className: "w-6 h-6" })}
+          </div>
+        ) : null}
 
         <div className="flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
           <Button
