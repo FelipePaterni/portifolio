@@ -1,7 +1,8 @@
 import AboutSection from "@/section/about";
 import HeroSection from "@/section/hero";
 import ProjectsSection from "@/section/project";
-import { getProfileData, getProjects } from "@/lib/getProfileData";
+import getProfileData from "@/lib/getProfileData";
+import SkillsSection from "@/section/skills";
 
 export default async function Page() {
   const data = await getProfileData();
@@ -18,8 +19,9 @@ export default async function Page() {
         email={data.contact.email}
         skills={skills}
       />
+      <AboutSection aboutMe={data.aboutMe} />
+      <SkillsSection languages={data.languages} skills={data.skills}/>
       <ProjectsSection />
-      <AboutSection />
     </main>
   );
 }

@@ -1,13 +1,13 @@
 import { ProjectProps } from "@/components/ui/projectCard";
 import { TimelineData } from "./timelinedata";
-import { LinkProps } from "./linkProps";
+import { ColorKey } from "@/components/ui/tag";
 
 export interface ProfileData {
-  aboutMe: string;
+  aboutMe: any;
 
   skills: {
     title: string;
-    competencies: string[];
+    competencies: { label: string; level: ColorKey }[];
   }[];
 
   languages: {
@@ -25,11 +25,4 @@ export interface ProfileData {
     github: string;
     linkedin: string;
   };
-}
-
-function to() {
-  let teste: ProfileData = {} as ProfileData;
-
-  const a = JSON.stringify(teste);
-  console.log(a);
 }

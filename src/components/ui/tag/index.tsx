@@ -11,7 +11,7 @@ const colors = {
   none: "",
 } as const;
 
-type ColorKey = keyof typeof colors;
+export type ColorKey = keyof typeof colors;
 
 export interface TagProps extends ComponentProps<"span"> {
   label: string;

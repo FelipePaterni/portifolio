@@ -1,7 +1,6 @@
 "use client";
 
 import Button from "@/components/ui/button";
-import { LinkProps } from "@/types/linkProps";
 import { motion } from "framer-motion";
 import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
 
@@ -143,13 +142,14 @@ export default function HeroSection({
           transition={{ delay: 1.2 }}
           className="absolute bottom-2 left-1/2 -translate-x-1/2"
         >
-          <a
+          <Button
+            variant="none"
             href="#about"
             className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
           >
             <span className="text-sm">Scroll</span>
             <ArrowDown className="w-5 h-5 animate-bounce" />
-          </a>
+          </Button>
         </motion.div>
       </div>
     </section>

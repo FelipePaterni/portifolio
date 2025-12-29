@@ -1,14 +1,18 @@
 {
-  "aboutMe": "Desenvolvedor Full Stack com experiência em TypeScript e React",
+  "aboutMe": [
+    "Sou um desenvolvedor Júnior com formação técnica em *Desenvolvimento de Sistemas* pela ETEC Martinho Di Ciero e graduação em andamento em *Análise e Desenvolvimento de Sistemas* pela Fatec Itu.",
+    "Possuo experiência prática em *Unity e C#*, adquirida em dois anos de estudos e projetos pessoais, além de conhecimento em desenvolvimento web e mobile com frameworks como Bootstrap e Angular.",
+    "Atuei na fundação do *Laboratório Fábrica de Software*, uma empresa júnior onde fortaleço minhas habilidades de colaboração e padronização técnica. Meu principal interesse é atuar no desenvolvimento back-end, aplicando soluções eficientes e escaláveis."
+  ],
   "skills": [
     {
       "title": "Programming Languages",
       "competencies": [
-        "TypeScript",
-        "React",
-        "Next.js",
-        "Node.js",
-        "PostgreSQL"
+        { "label": "TypeScript", "level": "primary" },
+        { "label": "React", "level": "primary" },
+        { "label": "Next.js", "level": "secondary" },
+        { "label": "Node.js", "level": "yellow" },
+        { "label": "PostgreSQL", "level": "primary" }
       ]
     }
   ],
