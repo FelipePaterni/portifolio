@@ -1,0 +1,56 @@
+{
+  "aboutMe": "Desenvolvedor Full Stack com experiência em TypeScript e React",
+  "skills": [
+    {
+      "title": "Programming Languages",
+      "competencies": [
+        "TypeScript",
+        "React",
+        "Next.js",
+        "Node.js",
+        "PostgreSQL"
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "language": "Português",
+      "level": "Nativo"
+    },
+    {
+      "language": "Inglês",
+      "level": "Avançado"
+    }
+  ],
+  "projects": [
+    {
+      "title": "Portfolio Website",
+      "description": "Site pessoal construído com Next.js",
+      "tags": ["Next.js", "TypeScript", "Tailwind CSS"],
+      "liveDemoLink": "https://example.com",
+      "githubLink": " "
+    }
+  ],
+  "timeline": [
+    {
+      "type": "work",
+      "title": "Desenvolvedor Junior",
+      "organization": "Tech Solutions",
+      "period": "Jan 2022 - Dez 2023",
+      "description": "Trabalhou no desenvolvimento de aplicações web usando React e Node.js."
+    },
+    {
+      "type": "education",
+      "title": "Bacharel em Ciência da Computação",
+      "organization": "Universidade XYZ",
+      "period": "2018 - 2021",
+      "description": "Graduado com honras, focado em desenvolvimento de software e algoritmos."
+    }
+  ],
+  "contact": {
+    "email": "developer@example.com",
+    "phone": "+55 11 98765-4321",
+    "github": "FelipePaterni",
+    "linkedin": "felipe-soares-paterni-chaves"
+  }
+}

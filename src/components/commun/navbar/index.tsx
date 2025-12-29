@@ -48,7 +48,7 @@ export default function Navbar({ navLinks }: NavbarProps) {
               <Code2 className="w-5 h-5 text-primary" />
             </div>
             <span className="font-semibold">
-              Dev<span className="text-primary">Portfolio</span>
+              Felipe <span className="text-primary">Paterni</span>
             </span>
           </NavLink>
 
