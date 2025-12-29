@@ -8,10 +8,10 @@ import Footer from "@/components/commun/footer";
 import { twMerge } from "tailwind-merge";
 
 export const metadata: Metadata = {
-  title: "Dev Journey Showcase",
+  title: "Felipe Paterni - Portfolio",
   description: "Portfolio showcasing projects, skills, and experience",
   keywords: ["portfolio", "developer", "projects", "skills"],
-  authors: [{ name: "Your Name" }],
+  authors: [{ name: "Felipe Paterni" }],
 };
 
 const outfit = Outfit({
@@ -35,7 +35,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="pt-BR" suppressHydrationWarning>
       {/* Suppress hydration warnings caused by browser extensions adding body attrs (e.g., cz-shortcut-listen). */}
 
       <body

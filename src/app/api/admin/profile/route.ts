@@ -3,7 +3,7 @@ import fs from "fs/promises";
 import path from "path";
 import { revalidatePath } from "next/cache";
 import { ProfileData } from "@/types/profile";
-import { getProfileData } from "@/lib/getProfileData";
+import getProfileData from "@/lib/getProfileData";
 
 const DATA_PATH = path.join(process.cwd(), "data/profile.json");
 
