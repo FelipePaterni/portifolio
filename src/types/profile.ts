@@ -3,7 +3,7 @@ import { TimelineData } from "./timelinedata";
 import { ColorKey } from "@/components/ui/tag";
 
 export interface ProfileData {
-  aboutMe: any;
+  aboutMe: string[];
 
   skills: {
     title: string;
