@@ -1,11 +1,9 @@
 import { NextResponse } from "next/server";
-import fs from "fs/promises";
-import path from "path";
 import { revalidatePath } from "next/cache";
 import { ProfileData } from "@/types/profile";
 import getProfileData from "@/lib/getProfileData";
-
-const DATA_PATH = path.join(process.cwd(), "data/profile.json");
+import connectDB from "@/lib/mongodb";
+import Profile from "@/models/Profile";
 
 export async function GET(req: Request) {
   const token = req.headers.get("authorization");
@@ -22,11 +20,23 @@ export async function POST(req: Request) {
   }
 
   const body: ProfileData = await req.json();
-  console.log(DATA_PATH);
 
-  await fs.writeFile(DATA_PATH, JSON.stringify(body, null, 2));
+  await connectDB();
+  
+  // Atualiza ou cria o perfil (assumindo que há apenas um perfil)
+  const updatedProfile = await Profile.findOneAndUpdate(
+    {}, // Busca qualquer perfil
+    body,
+    { 
+      new: true, // Retorna o documento atualizado
+      upsert: true, // Cria se não existir
+      runValidators: true // Valida os dados
+    }
+  );
 
   revalidatePath("/");
 
-  return NextResponse.json(body);
+  // Remove campos do MongoDB antes de retornar
+  const { _id, __v, ...profileData } = updatedProfile.toObject();
+  return NextResponse.json(profileData);
 }
