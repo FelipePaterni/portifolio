@@ -6,6 +6,8 @@ import SkillsSection from "@/section/skills";
 import ExperienceSection from "@/section/experience";
 import ContactSection from "@/section/contact";
 
+export const dynamic = "force-dynamic";
+
 export default async function Page() {
   const data = await getProfileData();
 
