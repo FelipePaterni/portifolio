@@ -38,7 +38,7 @@ export default async function Page() {
       <AboutSection aboutMe={data.aboutMe} />
       <SkillsSection languages={data.languages} skills={data.skills} />
       <ProjectsSection projects={data.projects} />
-      <ExperienceSection education={education}  experience={experience}/>
+      <ExperienceSection education={education} experience={experience} />
       <ContactSection contact={data.contact} />
     </main>
   );
